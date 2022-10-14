@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /*    1.把data.json的数据，每一条加上一个flag属性,
+                                                                                                    值为随机的true或false,计算出数据为true的商品的总的价格
+                                                                                                Data.json数据直接复制到文件里就可以*/
+    (() => {  
+        let arr = [    {      
+            id: 1,
+                  goods_name: "海魂纹哈衣水手服（婴童）",
+                  list_pic_url: "http://yanxuan.nosdn.127.net/53052b04ae001d289c040e09ea92231c.png",
+                  market_price: 69,
+                  number: 1,
+                  product_id: 216,
+                  retail_price: 69    
+        },      {      
+            id: 2,
+                  goods_name: "柔软凉爽天丝麻蚕丝填充夏凉被",
+                  list_pic_url: "http://yanxuan.nosdn.127.net/53052b04ae001d289c040e09ea92231c.png",
+                  market_price: 20,
+                  number: 10,
+                  product_id: 100,
+                  retail_price: 39    
+        },      {      
+            id: 3,
+                  goods_name: "Carat钻石 不粘厨具组合",
+                  list_pic_url: "http://yanxuan.nosdn.127.net/53052b04ae001d289c040e09ea92231c.png",
+                  market_price: 59,
+                  number: 20,
+                  product_id: 219,
+                  retail_price: 88    
+        },      {      
+            id: 4,
+                  goods_name: "104升 纯PC拉链斜纹拉杆箱",
+                  list_pic_url: "http://yanxuan.nosdn.127.net/53052b04ae001d289c040e09ea92231c.png",
+                  market_price: 299,
+                  number: 20,
+                  product_id: 199,
+                  retail_price: 256    
+        },      {      
+            id: 5,
+                  goods_name: "青翠灵动 龙泉青瓷经典餐具23件套",
+                  list_pic_url: "http://yanxuan.nosdn.127.net/53052b04ae001d289c040e09ea92231c.png",
+                  market_price: 199,
+                  number: 15,
+                  product_id: 290,
+                  retail_price: 155    
+        }  ]
+        arr.forEach(elem => {
+            elem.flag = Math.random() >= 0.5 ? true : false
+        })
+        let total = 0
+        arr.forEach(elem => {
+            if (elem.flag) {
+                total += elem.retail_price
+            }
+        })
+        console.log(total);
+    })();
+    /*
+    2..数组里有十个数字【7，1，2，3，4，5，6，7，8，9】，
+    其中有一个数据重复的，找出重复的数据。编写一个函数
+    */
+    (() => {
+        let arr = [7, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let fil = (arr) => {
+            arr.sort((a, b) => a - b)
+            let newarr = arr.filter((elem, i) => elem == arr[i + 1])
+            return newarr
+        }
+        console.log(fil(arr));
+    })();
+    /*3,数据里存储10个人的成绩，
+    把成绩大于80分的人数和成绩小于60的人数找出来，并统计大于80人数和小于60人数的百分比*/
+    (() => {
+        const obj = {
+            ming: 30,
+            hong: 80,
+            linag: 90,
+            wang: 70,
+            yue: 100,
+            xue: 80,
+            lai: 55,
+            tao: 77,
+            ke: 80,
+            lun: 99
+        };
+        let arr = []
+        for (let key in obj) {
+            if (obj[key] > 80 || obj[key] < 60) {
+                arr.push(obj[key])
+            }
+        }
+        let i = 0
+        let j = 0
+        arr.forEach(elem => {
+            if (elem > 80) {
+                i++
+            } else if (elem < 60) {
+                j++
+            }
+        })
+        console.log(`在大于80小于60的人中大于80的人占比${(i/arr.length)*100}%`);
+        console.log(`在大于80小于60的人中大于80的人占比${(j/arr.length)*100}%`);
+    })();
+    (() => {
+        //字符串 “I am a student” 把每个单词反转 “I  ma  a  tneduts”
+        let str = "I am a student"
+        let arr = str.split(' ')
+        let newstr = ''
+        arr.forEach(elem => {
+            newstr += elem.split("").reverse().join("") + " "
+        })
+        console.log(newstr);
+    })();
+    // 5. 把字符中除了数字以外的字符都删除 例如”hello123world456“ 转为 “123456”
+    (() => {
+        let str = 'hello123world456'
+        let newstr = ""
+        for (i = 0; i <= str.length; i++) {
+            if (isNaN(Number(str[i])) === false) {
+                newstr += str[i]
+            }
+        }
+        console.log(newstr);
+    })();
+</script>

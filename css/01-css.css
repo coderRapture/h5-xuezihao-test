@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+input {
+    outline: none;
+}
+
+header {
+    width: 90%;
+    padding: 40px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+}
+
+header>input {
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+    text-indent: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="date"] {
+    text-indent: 0;
+    width: 150px;
+}
+
+header>button {
+    width: 50px;
+    height: 25px;
+    background-color: skyblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+main {
+    width: 95%;
+    border: 2px solid #dedede;
+    margin: 0 auto;
+}
+
+thead {
+    background-color: #dedede;
+}
+
+tr {
+    width: 100%;
+    display: flex;
+}
+
+td {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+td:nth-child(1) {
+    width: 10%;
+}
+
+td:nth-child(2) {
+    flex: 1;
+}
+
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+    width: 10%;
+}
+
+table,
+thead,
+tbody {
+    width: 100%;
+}
+
+td>button {
+    background-color: transparent;
+    border: none;
+    color: red;
+}
+
+td>button:nth-child(2) {
+    color: skyblue;
+    margin-left: 10px;
+}
+
+aside {
+    width: 300px;
+    height: 250px;
+    /* background-color: red; */
+    border-radius: 15px;
+}
+
+aside header {
+    width: 100%;
+    border: none;
+    height: auto;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+aside header>button {
+    background-color: transparent;
+    color: black;
+    font-size: 30px;
+}
+
+hr {
+    width: 100%;
+    background-color: #ddd;
+    height: 2px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+aside main {
+    border: none;
+    padding: 5px 10px;
+}
+
+aside main>input,
+aside main>input[type="date"] {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+aside footer {
+    padding: 5px 10px 30px 5px;
+}
+
+aside footer>button {
+    width: 50px;
+    height: 25px;
+    background-color: skyblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+aside>article {
+    width: 350px;
+    background-color: #fff;
+}
